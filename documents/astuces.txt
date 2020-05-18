@@ -24,7 +24,7 @@ ASTUCES :
         > fonts
         > scss
   3. Intégration du template fourni,
-     y lacer les zones dynamiques et décomposer en partials
+     y lancer les zones dynamiques et décomposer en partials
      > Faire un commit
   4. Créer la route par défaut: affichage des 10 derniers posts
      > Faire un commit
