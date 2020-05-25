@@ -5,6 +5,7 @@
 namespace App\Controleurs\Posts;
 use \App\Modeles\Posts;
 use \App\Modeles\Tags;
+use \App\Modeles\Authors;
 
 function indexAction(\PDO $connexion) {
   // 1. On demande les posts au modèle que l'on met dans $posts
@@ -25,7 +26,10 @@ function showAction(\PDO $connexion, int $id) {
   // 2. On demande les tags au modèle et on le met dans $tags
   include_once '../app/modeles/tagsModele.php';
   $tags = Tags\indexByPostId($connexion, $id);
-  // 3. On charge la vue show dans $content
+  // 3. On demande l'auteur au modèle et on le met dans $author
+  include_once '../app/modeles/authorsModele.php';
+  $author = Authors\show($connexion, $post['author_id']);
+  // 4. On charge la vue show dans $content
   GLOBAL $title, $content;
   $title = $post['title'];
   ob_start();
