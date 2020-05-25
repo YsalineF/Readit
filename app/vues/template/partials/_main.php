@@ -9,7 +9,7 @@
         <div class="col-lg-8 ftco-animate">
           <?php echo $content; ?>
         </div>
-
+          
         <!-- .col-md-8 -->
         <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
           <?php include_once '../app/vues/template/partials/_aside.php' ?>
