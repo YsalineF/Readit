@@ -44,4 +44,7 @@
       </li>
     <?php endforeach; ?>
   </ul>
+  <!-- END comment-list -->
+  <!-- comment form -->
+  <?php include_once '../app/vues/comments/_addForm.php'; ?>
 </div>
