@@ -6,6 +6,7 @@ namespace App\Controleurs\Posts;
 use \App\Modeles\Posts;
 use \App\Modeles\Tags;
 use \App\Modeles\Authors;
+use \App\Modeles\Comments;
 
 function indexAction(\PDO $connexion) {
   // 1. On demande les posts au modèle que l'on met dans $posts
@@ -29,7 +30,11 @@ function showAction(\PDO $connexion, int $id) {
   // 3. On demande l'auteur au modèle et on le met dans $author
   include_once '../app/modeles/authorsModele.php';
   $author = Authors\show($connexion, $post['author_id']);
-  // 4. On charge la vue show dans $content
+  // 4. On demande les comments et le nombre de comments par article au modèle et on le met dans $comments et dans $nbrComments
+  include_once '../app/modeles/commentsModele.php';
+  $comments = Comments\indexByPostId($connexion, $id);
+  $nbrComments = Comments\nbrComments($connexion, $id);
+  // 5. On charge la vue show dans $content
   GLOBAL $title, $content;
   $title = $post['title'];
   ob_start();

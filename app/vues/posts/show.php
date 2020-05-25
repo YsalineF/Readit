@@ -30,3 +30,18 @@
     <p><?php echo $author['biography']; ?></p>
   </div>
 </div>
+<!-- Comments -->
+<div class="pt-5 mt-5">
+  <h3 class="mb-5"><?php echo $nbrComments['nbrComments']; ?> Comments</h3>
+  <ul class="comment-list">
+    <?php foreach ($comments as $comment): ?>
+      <li class="comment">
+        <div class="comment-body">
+          <h3><?php echo $comment['pseudo']; ?></h3>
+          <div class="meta mb-3"><?php echo $comment['createdAt'];?> at <?php echo $comment['timeHour'];?></div>
+          <p><?php echo $comment['content']; ?></p>
+        </div>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+</div>
